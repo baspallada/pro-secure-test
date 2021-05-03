@@ -1,0 +1,566 @@
+{
+    "modules": [
+        {
+            "name": "Assistant",
+            "icon": "assets/icons/assistant-icon.png",
+            "commands": [
+                {
+                    "name": "appointment",
+                    "description": [
+                        "Lets you make an appointment with other people",
+                        "Clerq will notify you when you appointment is coming up"
+                    ],
+                    "examples": [
+                        "PREFIXappointment @member",
+                        "PREFIXappointment @member, @member2, a friend"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ]
+                },
+                {
+                    "name": "reminder",
+                    "description": [
+                        "Set a reminder",
+                        "Use the 1w1d1h1m1s format"
+                    ],
+                    "examples": [
+                        "PREFIXremindme 1d2m Fortnite concert",
+                        "PREFIXremindme 1h Get groceries"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "timetillweekend",
+                    "description": [
+                        "Can't it just be weekend already?"
+                    ],
+                    "examples": [
+                        "PREFIXtimetillweekend"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "timetillweekend",
+                        "weekend",
+                        "ttw"
+                    ]
+                },
+                {
+                    "name": "timezone",
+                    "description": [
+                        "Control your timezone"
+                    ],
+                    "examples": [
+                        "PREFIXtimezone"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "timezone set",
+                    "description": [
+                        "Set your timezone so that other commands can use it"
+                    ],
+                    "examples": [
+                        "PREFIXtimezone set Europe/Amsterdam"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "weather ?name",
+                    "description": [
+                        "Get the weather for your location, or a given location"
+                    ],
+                    "examples": [
+                        "PREFIXweather Amsterdam",
+                        "PREFIXweather"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "setweather",
+                    "description": [
+                        "Set your default weather location for the weather command"
+                    ],
+                    "examples": [
+                        "PREFIXweather Amsterdam"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                }
+            ]
+        },
+        {
+            "name": "Fun",
+            "icon": "assets/icons/confetti.png",
+            "commands": [
+                {
+                    "name": "mock",
+                    "description": [
+                        "MocKS a MesSAge LiKE ThiS!"
+                    ],
+                    "examples": [
+                        "PREFIXmock Mock this message!",
+                        "PREFIXmock ^"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Read Message History",
+                        "Manage Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "unmock",
+                    "description": [
+                        "Unmocks a message like this!"
+                    ],
+                    "examples": [
+                        "PREFIXunmock UnMOcK ThiS MeSSaGe!",
+                        "PREFIXunmock ^"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Read Message History",
+                        "Manage Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "rate",
+                    "description": [
+                        "A totally accurate rating from 1-100"
+                    ],
+                    "examples": [
+                        "PREFIXrate Clerqbot",
+                        "PREFIXrate ^"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Read Message History"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "f",
+                    "description": [
+                        "Press F to pay respects"
+                    ],
+                    "examples": [
+                        "PREFIXf Will Irons",
+                        "PREFIXf"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "F"
+                    ]
+                },
+                {
+                    "name": "reddit",
+                    "description": [
+                        "Get a random post from a random subreddit"
+                    ],
+                    "examples": [
+                        "PREFIXreddit"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "randomreddit"
+                    ]
+                },
+                {
+                    "name": "reddit [hot, rising, new] ?[name]",
+                    "description": [
+                        "Get hot, rising or new post from a subreddit"
+                    ],
+                    "examples": [
+                        "PREFIXreddit rising",
+                        "PREFIXreddit hot discordapp",
+                        "PREFIXreddit hot askreddit"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "reddit [top, controversial] ?[name] ?[hour, day, week, month, year, all]",
+                    "description": [
+                        "Get a top or controversial post from a subreddit in a given timeframe"
+                    ],
+                    "examples": [
+                        "PREFIXreddit top",
+                        "PREFIXreddit top askreddit week",
+                        "PREFIXreddit controversial worldnews"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                }
+            ]
+        },
+        {
+            "name": "Games",
+            "icon": "assets/icons/joystick.png",
+            "commands": [
+                {
+                    "name": "tictactoe",
+                    "description": [
+                        "Play a game of tic tac toe against a person or the computer"
+                    ],
+                    "examples": [
+                        "PREFIXttt @member",
+                        "PREFIXttt"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "ttt"
+                    ]
+                },
+                {
+                    "name": "count start",
+                    "description": [
+                        "The guild that can count the highest wins (nothing)!",
+                        "Make sure not to count double, or skip a number, the streak will end!"
+                    ],
+                    "examples": [
+                        "PREFIXcount start"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "count",
+                    "description": [
+                        "Get the current and highscore of the server (doesnt reset the score)"
+                    ],
+                    "examples": [
+                        "PREFIX count"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "countstatus"
+                    ]
+                },
+                {
+                    "name": "hangman",
+                    "description": [
+                        "Play a game of hangman with the computer or other people"
+                    ],
+                    "examples": [
+                        "PREFIX hangman @Person1",
+                        "PREFIX hangman @Person1 @Person2",
+                        "Computer: PREFIXhangman"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                }
+            ]
+        },
+        {
+            "name": "Images",
+            "icon": "assets/icons/photo.png",
+            "commands": [
+                {
+                    "name": "hilarious",
+                    "description": [
+                        "Use this when we all know someone is lying"
+                    ],
+                    "examples": [
+                        "PREFIXhilarious ^",
+                        "PREFIXhilarious Hearthstone is a skill based game"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Attach Files"
+                    ],
+                    "aliases": [
+                        "top10jokes",
+                        "andotherjokes"
+                    ]
+                },
+                {
+                    "name": "achievement",
+                    "description": [
+                        "You finally achieved something!"
+                    ],
+                    "examples": [
+                        "PREFIXachievement waking up"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Attach Files"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "deepfry",
+                    "description": [
+                        "Deepfry an image"
+                    ],
+                    "examples": [
+                        "PREFIXdeepfry ^",
+                        "PREFIXdeepfry [Attached Image]"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Attach Files",
+                        "Read Message History"
+                    ],
+                    "aliases": [
+                        "fry"
+                    ]
+                },
+                {
+                    "name": "shallowfry",
+                    "description": [
+                        "When you want to fry an image but still want it to be somewhat readable"
+                    ],
+                    "examples": [
+                        "PREFIXshallowfry ^",
+                        "PREFIXshallowfry [Attached Image]"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Attach Files",
+                        "Read Message History"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "jpeg",
+                    "description": [
+                        "When reposting doesn't reduce the image quality fast enough"
+                    ],
+                    "examples": [
+                        "PREFIXdeepfry ^",
+                        "PREFIXdeepfry [Attached Image]"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Attach Files",
+                        "Read Message History"
+                    ],
+                    "aliases": [
+                        "jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Music",
+            "icon": "assets/icons/note.png",
+            "commands": [
+                {
+                    "name": "play",
+                    "description": [
+                        "Plays a YouTube or Spotify video/song"
+                    ],
+                    "examples": [
+                        "PREFIXp https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "PREFIXp take on me",
+                        "PREFIXp spotify:track:2WfaOiMkCvy7F5fcp2zZ8L"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Connect",
+                        "Speak"
+                    ],
+                    "aliases": [
+                        "p",
+                        "yt",
+                        "sp",
+                        "youtube",
+                        "spotify"
+                    ]
+                },
+                {
+                    "name": "seek",
+                    "description": [
+                        "Skip to a certain number of seconds in a song"
+                    ],
+                    "examples": [
+                        "PREFIXseek 70"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "skip",
+                    "description": [
+                        "Skip the current song"
+                    ],
+                    "examples": [
+                        "PREFIXskip"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "next"
+                    ]
+                },
+                {
+                    "name": "queue",
+                    "description": [
+                        "Shows the queue and current song"
+                    ],
+                    "examples": [
+                        "PREFIXqueue"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "q"
+                    ]
+                },
+                {
+                    "name": "pause",
+                    "description": [
+                        "Pause/Play the current song"
+                    ],
+                    "examples": [
+                        "PREFIXpause"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "resume"
+                    ]
+                },
+                {
+                    "name": "volume",
+                    "description": [
+                        "Change the song volume between 0 and 1000%"
+                    ],
+                    "examples": [
+                        "PREFIXvolume 150"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "vol"
+                    ]
+                },
+                {
+                    "name": "shuffle",
+                    "description": [
+                        "Shuffle the song queue"
+                    ],
+                    "examples": [
+                        "PREFIXshuffle"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "repeat",
+                    "description": [
+                        "Put the current song on repeat"
+                    ],
+                    "examples": [
+                        "PREFIXrepeat"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": [
+                        "loop"
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "description": [
+                        "Remove a song from the queue"
+                    ],
+                    "examples": [
+                        "PREFIXremove 3"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "find",
+                    "description": [
+                        "Search for 10 songs & play 1"
+                    ],
+                    "examples": [
+                        "PREFIXfind charlie bit my finger"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "stop",
+                    "description": [
+                        "Stops the current song & clears the queue without disconnect"
+                    ],
+                    "examples": [
+                        "PREFIXstop"
+                    ],
+                    "permissions": [
+                        "Send Messages"
+                    ],
+                    "aliases": []
+                },
+                {
+                    "name": "disconnect",
+                    "description": [
+                        "Stops the current song & clears the queue with disconnect"
+                    ],
+                    "examples": [
+                        "PREFIXdisconnect"
+                    ],
+                    "permissions": [
+                        "Send Messages",
+                        "Connect"
+                    ],
+                    "aliases": [
+                        "dc",
+                        "quit",
+                        "leave"
+                    ]
+                }
+            ]
+        }
+    ]
+}

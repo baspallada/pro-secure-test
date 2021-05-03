@@ -1,0 +1,11 @@
+<div class="title">
+    <h1 class="">Your playlists</h1>
+</div>
+<hr class="solid">
+<div class="playlists">
+    <div *ngFor="let playlist of playlists; let i = index;">
+        <div class="playlist">
+            <app-playlist-card [playlist]="playlist"></app-playlist-card>
+        </div>
+    </div>
+</div>

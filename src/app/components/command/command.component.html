@@ -1,0 +1,25 @@
+<div id="accordion">
+  <div class="card command-accordion">
+    <div class="card-header" id="heading{{id}}">
+      <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#' + id" [attr.aria-controls]="id">
+        <strong>{{command.name}}</strong><br />
+        <span>{{command.description[0]}}</span>
+      </button>
+    </div>
+    <div id="{{id}}" class="collapse" [attr.aria-labelledby]="'heading'+id" data-parent="#accordion">
+      <div class="card-body description">
+        <div class="description-title">EXAMPLES</div>
+        <div *ngFor="let example of command.examples">
+          <div class="description-text">{{example.replace('PREFIX', PREFIX)}}</div>
+        </div>
+        <div class="description-spacer"></div>
+        <div class="description-title">PERMISSIONS</div>
+        <div class="description-text">{{command.permissions.join(", ")}}</div>
+        <div *ngIf="command?.aliases?.length > 0">
+          <div class="description-title">ALIASES</div>
+          <div class="description-text">{{command.aliases.join(", ")}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

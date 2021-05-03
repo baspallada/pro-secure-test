@@ -1,0 +1,45 @@
+.login {
+  background-color: #232227;
+  border: 1px solid #707070;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 0.5rem 1.5rem;
+}
+
+.logo {
+  max-width: 55px;
+}
+
+// Change navbar-toggler inside lines color (stroke)
+.navbar-light span.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+// Remove border color of the navbar-toggler (hamburger-icon) on click
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+.nav-link {
+  color: #99AAB5;
+  font-size: 16px;
+  padding-left: 26px;
+}
+
+.nav-link:hover {
+  color: #DE211D !important;
+}
+
+.login:active {
+  transform: translateY(2px);
+}
+
+.nav-active {
+  color: #DE211D !important;
+}
+
+.login {
+  cursor: pointer;
+}

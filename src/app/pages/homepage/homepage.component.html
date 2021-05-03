@@ -1,0 +1,37 @@
+<div id="main-container">
+  <div class="grid-container">
+    <div class="left-container">
+      <h1 class="title"><strong>Clerq</strong></h1>
+      <h2 class="description"><em>The only bot you'll need</em></h2>
+      <div class="buttons">
+
+        <ng-container *ngIf="user && selectedServerId && selectedServerName; else loggedIn">
+          <button id="getting-started-btn" class="landing-btn" routerLink="/dashboard/">Dashboard</button>
+        </ng-container>
+        <ng-template #loggedIn>
+          <ng-container *ngIf="user; else showLogin">
+            <button id="getting-started-btn" class="landing-btn" routerLink="/dashboard/servers">Dashboard</button>
+          </ng-container>
+        </ng-template>
+        <ng-template #showLogin>
+          <button id="getting-started-btn" class="landing-btn" (click)="login()">Get Started</button>
+        </ng-template>
+
+        <a href="https://discord.com/oauth2/authorize?client_id=671469153877622786&scope=bot&permissions=16776390"
+          target="_blank">
+          <button id="invite-btn" class="landing-btn">Invite Bot</button>
+        </a>
+      </div>
+    </div>
+    <div class="image-container">
+      <img id="landing-page-img" src="assets/images/landing_page.png" alt="background image of person on phone">
+    </div>
+  </div>
+
+  <div *ngIf="features">
+    <div class="buffer-features"></div>
+    <div id='featuresList'>
+      <app-info-block [features]="features"></app-info-block>
+    </div>
+  </div>
+</div>

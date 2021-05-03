@@ -1,0 +1,45 @@
+{
+    "staff": [
+        {
+            "name": "Xyrai",
+            "discriminator": "#4069",
+            "description": [
+                "eat 🍝 write 🍝 deploy 🍝"
+            ],
+            "image": "https://cdn.discordapp.com/avatars/746145886060413071/299c21015236961fa31754a25241af86.png?size=128",
+            "github": "https://github.com/xyrai",
+            "twitter": "https://twitter.com/xyrai_",
+            "twitch": "https://www.twitch.tv/xyrai_"
+        },
+        {
+            "name": "HagelslagPakje",
+            "discriminator": "#1234",
+            "description": [
+                "If something is broken, it's probably my fault",
+                "What he > said is false",
+                "€50,- per uur",
+                "I browse r/ProgrammerHumor 8 hours a day, it makes me a better software engineer."
+            ],
+            "image": "https://cdn.discordapp.com/avatars/282238068918976512/2ebb413d5b9e811b653dd7ac16c04f1c.png?size=128",
+            "github": "https://github.com/quirijnlangedijk"
+        },
+        {
+            "name": "Darwin",
+            "discriminator": "#3049",
+            "description": [
+                "It's actually my spaghetti that broke everything, but don't tell the others."
+            ],
+            "image": "https://cdn.discordapp.com/avatars/232503850479648769/eb67f17e509d72778225a3ca96e60167.png?size=128",
+            "github": ""
+        },
+        {
+            "name": "Runi215",
+            "discriminator": "#1986",
+            "description": [
+                ""
+            ],
+            "image": "https://cdn.discordapp.com/avatars/272473731895394304/16575438ead100cffe4db35d1f82f4fa.png?size=128",
+            "github": ""
+        }
+    ]
+}

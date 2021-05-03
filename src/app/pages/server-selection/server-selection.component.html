@@ -1,0 +1,13 @@
+<div class="text-center">
+  <h1>Select a server</h1>
+</div>
+
+<div class="container">
+  <div *ngFor="let server of servers" class="card server-selection-card">
+    <img class="card-img-top pointer" src="{{ server.icon }}"
+      (click)="selectServer(server.id, server.name, server.icon, server.permissions)" routerLink="/dashboard/">
+    <div class="card-body">
+      {{ server.name.length < 17 ? server.name : server.name.substring(0, 17) + '..' }}
+    </div>
+  </div>
+</div>

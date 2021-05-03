@@ -1,0 +1,58 @@
+.command-accordion {
+  background-color: #18171c;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 13px;
+  padding-left: 25px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 4px black;
+
+  button {
+    text-align: left;
+    text-decoration: none;
+    color: #de211d;
+
+    span {
+      color: white;
+      font-style: italic;
+    }
+  }
+}
+
+.description {
+  color: #f3f3f3;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.bottom-padding {
+  padding-bottom: 10px;
+}
+
+.description-title {
+  color: #6d6d6d;
+  font-size: 12px;
+  font-weight: medium;
+}
+
+.description-text {
+  color: #f3f3f3;
+  font-size: 15px;
+  font-weight: light;
+}
+
+.description-spacer {
+  padding-bottom: 5px;
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: none;
+  padding-left: 0px;
+  padding: 0.5rem 0.4rem;
+}
+
+.card-body {
+  border-top: 1px solid #534c4c;
+  margin-right: 1.5em;
+}

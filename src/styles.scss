@@ -1,0 +1,162 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$clerq-site-primary: mat-palette($mat-indigo);
+$clerq-site-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$clerq-site-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$clerq-site-theme: mat-light-theme($clerq-site-primary, $clerq-site-accent, $clerq-site-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($clerq-site-theme);
+
+/* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 65px;
+  background-color: #F3F3F3 !important;
+  color: #212529 !important;
+  font-family: 'Poppins', sans-serif !important;
+  margin: 0;
+}
+
+.blurple {
+  color: #7289DA
+}
+
+.full-white {
+  color: #FFFFFF
+}
+
+.greyple {
+  color: #99AAB5
+}
+
+.dark-bnb {
+  color: #2C2F33
+}
+
+.nq-black {
+  color: #23272A
+}
+
+.navbar-custom {
+  background-color: #18171C;
+  border-color: #2C2F33;
+  color: #99AAB5;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  margin-left: 20px;
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+  color: #F3F3F3 !important;
+}
+
+a:hover, a:active, a:visited, a:focus {
+  text-decoration: none !important;
+}
+
+.title {
+  color: #18171C;
+  text-align: center;
+}
+
+.title-motto {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
+
+.space-gap {
+  padding-top: 10vh;
+}
+
+.arrow-down,
+.arrow-down:before {
+  position: absolute;
+  left: 50%;
+}
+
+.arrow-down {
+  width: 40px;
+  height: 40px;
+  top: 90%;
+  margin: -20px 0 0 -20px;
+  -webkit-transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px #fff solid;
+  border-bottom: 2px #fff solid;
+}
+
+.arrow-down:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow-down;
+}
+
+@keyframes arrow-down {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(10px, 10px);
+  }
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden!important;
+  scroll-behavior: smooth;
+}
+
+
+/* Scrollbar Style */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #23272A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #23272A;
+}

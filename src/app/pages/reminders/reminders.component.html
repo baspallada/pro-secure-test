@@ -1,0 +1,45 @@
+<div *ngIf="!reminders || reminders.length === 0">
+  <h1 class="text-center error">No reminders found!</h1>
+</div>
+
+<div *ngFor="let reminder of reminders" class="col-4 card text-white bg-dark mb-3">
+  <div class="card-header text-capitalize">
+    <h5>{{reminder.title}}</h5>
+  </div>
+  <div class="card-body">
+    <h5 class="card-text">{{reminder.timeLeft}}</h5>
+    <br>
+    <h6 class="card-text">Created on: {{reminder.createdAt}}</h6>
+    <h6 class="card-text">Due Date: {{reminder.dueDate}}</h6>
+    <div><button class="btn btn-danger"
+        (click)="showModal=true; saveTempReminder(reminder); setReminderTitle();">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal" [ngClass]="{'show': showModal}">
+  <div class="modal-dialog">
+    <div class="modal-content" style="color:black;">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Deleting reminder</h4>
+        <button type="button" class="close" data-dismiss="modal"
+          (click)="showModal=false; clearTempValues();">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal"
+          (click)="showModal=false; clearTempValues();">No</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal"
+          (click)="deleteReminder(); showModal=false">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

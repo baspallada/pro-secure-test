@@ -1,0 +1,16 @@
+<div class="main-container">
+  <input type="text" class="search-bar" placeholder="Search..." [formControl]="filter">
+  <div class="modules-bar">
+    <div *ngFor="let module of allModules">
+      <button id="{{module.name}}" class="module-button" (click)="filterCommands(module.name); openModule(module.name)">
+        <img class="module-icon" src="{{module.icon}}" />
+        <div class="module-text">{{module.name}}</div>
+      </button>
+    </div>
+  </div>
+  <div class="commands-container">
+    <div *ngFor="let command of commands$ | async">
+      <app-command [command]="command"></app-command>
+    </div>
+  </div>
+</div>

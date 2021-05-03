@@ -1,0 +1,108 @@
+<!--Playlist info-->
+<div class="container" *ngIf="playlist">
+    <div class="row">
+        <div class="col-2 playlist-icon">
+            <div *ngIf="playlist?.imageLink; else noImage">
+                <img class="playlist-icon" src="{{ playlist?.imageLink }}" alt="{{ playlist?.playlistName }}"> <br />
+            </div>
+            <ng-template #noImage>
+                <div class="center">No Image Available!</div>
+            </ng-template>
+        </div>
+        <div class="col-2">
+            <p class="playlistTitle">{{ playlist?.playlistName }} </p>
+            <p>
+                <!--Created by {{ user.discordName  }}<br />-->
+                {{ songs.length }} songs</p>
+            <p>{{ playlist?.durationString }}</p>
+            <button type="button" class="btn btn-success left" (click)="playPlaylist()">Play playlist</button>
+        </div>
+
+
+        <div class="col-4">
+            <div id="statusBox" class="center" style="opacity: 0;">
+                <div id="statusCard" class="card w-60" style="min-width: 60%;">
+                    <div class="card-header">{{status}}</div>
+                    <div class="card-body">
+                        <p class="card-text">{{statusMsg}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-1"></div>
+    <!--Filter-->
+    <div class="col-8">
+        <form>
+            <div class="input-group searchBar" [class.full]="!showAdd">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend">
+                        <fa-icon class="moduleName fa-lg" [icon]="faSearch"></fa-icon>
+                    </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Filter" aria-describedby="inputGroupPrepend"
+                    [formControl]="filter">
+            </div>
+        </form>
+    </div>
+
+    <!--Add Button-->
+    <div class="col-2">
+        <input type="text" class="form-control addBar" [class.hidden]="!showAdd" placeholder="Youtube URL" [(ngModel)]="addUrl">
+    </div>
+    <div class="col-1">
+        <button type="button" class="btn btn-success left" (click)="openAdd()">Add</button>
+    </div>
+    <div class="col-1"></div>
+</div>
+
+<!--Playlist-->
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <table class="table table-hover playlist">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Artist</th>
+                    <th scope="col">
+                        <fa-icon class="moduleName fa-lg" [icon]="faCalendarCheck" title="Date added"></fa-icon>
+                    </th>
+                    <th scope="col">
+                        <fa-icon class="moduleName fa-lg" [icon]="faClock" title="Duration"></fa-icon>
+                    </th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="playRow" *ngFor="let song of songs$ | async">
+                    <th style="width: 50px;">
+                        <a (click)="playSong(song)">
+                            <fa-icon class="moduleName fa-lg playButton" [icon]="faPlayCircle"></fa-icon>
+                        </a>
+                    </th>
+                    <td>
+                        <ngb-highlight [result]="song.songName" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="song.artist" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td title={{song.addedOnFormatted}}>{{song.sinceAdded}}</td>
+                    <td>{{song.duration}}</td>
+                    <td style="width: 50px;">
+                        <a (click)="removeSong(song.songName)">
+                            <fa-icon class="moduleName fa-lg playButton" [icon]="faTimes"></fa-icon>
+                        </a>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-1"></div>
+</div>

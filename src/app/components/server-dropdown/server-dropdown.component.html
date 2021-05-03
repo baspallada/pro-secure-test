@@ -1,0 +1,8 @@
+<form>
+  <select #serverList name="dropdown" class="bg-dark text-white" (change)="setSelectedServerInfo(serverList.value)">
+    <option value="null" disabled>{{ currentServerName }}</option>
+    <option *ngFor="let server of servers;" value="{{ server | json }}">
+      {{ server.name }}
+    </option>
+  </select>
+</form>

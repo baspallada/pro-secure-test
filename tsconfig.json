@@ -1,0 +1,32 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true, // this is needed for non angular nodejs packages
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@clerq/environment": ["environments/environment"],
+      "@clerq/components/*": ["app/components/*"],
+      "@clerq/pages/*": ["app/pages/*"],
+      "@clerq/services/*": ["app/services/*"],
+      "@clerq/providers/*": ["app/providers/*"],
+      "@clerq/models/*": ["app/models/*"],
+      "@clerq/dto/*": ["app/dto/*"],
+      "@clerq/interfaces/*": ["app/interfaces/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

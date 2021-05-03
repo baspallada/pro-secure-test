@@ -1,0 +1,10 @@
+<div class="title-container">
+  <h1>Developers</h1>
+  <p><em>Clerq would not have existed without these people...</em></p>
+</div>
+
+<div class="card-container">
+  <div *ngFor="let staffMember of staff">
+    <app-staff-card [staffMember]="staffMember"></app-staff-card>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.playlist-icon {
+    object-fit: scale-down;
+    width: 250px;
+    height: 250px;
+}
+
+.playlist-title {
+    padding-top: 0;
+    text-align: left;
+    color: #18171C;
+}
+
+.playlist-info {
+    color: grey;
+    font-size: small;
+}
+
+.no-img-margin {
+    padding-top: 125px;
+    padding-bottom: 125px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+}
+
+a {
+    color: white!important;
+}
+
+a:hover {
+    color: white!important;
+    text-decoration: underline!important;
+}

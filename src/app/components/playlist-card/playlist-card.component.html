@@ -1,0 +1,16 @@
+<div *ngIf="playlist">
+    <div *ngIf="playlist.imageLink; else noImage">
+        <a routerLink="/dashboard/playlist/{{playlist.playlistName}}">
+            <img class="playlist-icon" src="{{ playlist.imageLink }}" alt="{{ playlist.playlistName }}"> <br />
+        </a>
+    </div>
+    <ng-template #noImage>
+        <div class="no-img-margin">No Image Available!</div>
+    </ng-template>
+    <div class="">
+        <a routerLink="/dashboard/playlist/{{playlist.playlistName}}">
+            <h5 class="playlist-title">{{ playlist.playlistName }}</h5>
+        </a>
+        <div class="playlist-info">Number of songs: {{ playlist.songs.length }}</div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="card" *ngIf="nextAppointment">
+  <h5 class="card-title">Next appointment</h5>
+  <p class="card-text">
+    {{ nextAppointment.title }} <br>
+    {{ this.convertTimeToFromNow(nextAppointment.dateStart) }}
+  </p>
+  <div class="card-text"></div>
+</div>
+
+<div class="card" *ngIf="nextReminder">
+  <h5 class="card-title">Next reminder</h5>
+  <p class="card-text">
+    {{ nextReminder.title }} <br>
+    {{ this.convertTimeToFromNow(nextReminder.dueDate) }}
+  </p>
+</div>

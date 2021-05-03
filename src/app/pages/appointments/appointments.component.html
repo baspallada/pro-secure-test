@@ -1,0 +1,109 @@
+<div style="padding-top:50px"></div>
+<div class="row text-center">
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div class="btn btn-secondary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+        (viewDateChange)="closeOpenMonthViewDay()">Previous</div>
+      <div class="btn btn-secondary" mwlCalendarToday [(viewDate)]="viewDate">Today</div>
+      <div class="btn btn-secondary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
+        (viewDateChange)="closeOpenMonthViewDay()">Next</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div class="btn btn-secondary" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">
+        Month</div>
+      <div class="btn btn-secondary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">
+        Week</div>
+      <div class="btn btn-secondary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">
+        Day</div>
+    </div>
+  </div>
+</div>
+<br />
+<div [ngSwitch]="view" class="calendar">
+  <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="appointments"
+    [weekStartsOn]="1" [activeDayIsOpen]=true (dayClicked)="dayClicked($event.day)" [refresh]="refresh"
+    (eventClicked)="selectAppointment($event.event)">
+  </mwl-calendar-month-view>
+  <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="appointments"
+    [refresh]="refresh" (eventClicked)="selectAppointment($event.event)">
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="appointments"
+    [refresh]="refresh" (eventClicked)="selectAppointment($event.event)">
+  </mwl-calendar-day-view>
+</div>
+
+<br />
+<div id="deleteEventCollapsable" [ngbCollapse]="deleteIsCollapsed"
+  [@expandCollapse]="deleteIsCollapsed ? 'closed' : 'open'">
+  <div class="card">
+    <div class="card-body">
+      Are you sure you want to remove that appointment?
+      <br />
+      <button type="button" class="btn btn-outline-success mr-3" (click)="deleteAppointment()">Yes</button>
+      <button type="button" class="btn btn-outline-danger mr-3" (click)="toggleDeleteCollapsable()">No</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="editEventCollapsable" [ngbCollapse]="editIsCollapsed" [@expandCollapse]="editIsCollapsed ? 'closed' : 'open'">
+  <div class="card">
+    <div class="card-body">
+      <div *ngIf="selectedEvent != null">
+        <form>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label for="appointmentTitle">Appointment Name</label>
+              <input type="text" class="form-control mb-3" id="appointmentTitle" [(ngModel)]="selectedEvent.title"
+                name="title" placeholder="Not set">
+            </div>
+          </div>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label for="appointmentStart">Starting date</label>
+              <input id="appointmentStart" class="form-control" type="text" mwlFlatpickr
+                [(ngModel)]="selectedEvent.start" name="start" [altInput]="true" [convertModelValue]="true"
+                [enableTime]="true" dateFormat="d-m-YTH:i" altFormat="j F Y H:i" placeholder="Not set" />
+            </div>
+            <div class="col-auto">
+              <label for="appointmentEnd">Ending date</label>
+              <input id="appointmentEnd" class="form-control" type="text" mwlFlatpickr [(ngModel)]="selectedEvent.end"
+                name="end" [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="d-m-YTH:i"
+                altFormat="j F Y H:i" placeholder="Not set" />
+            </div>
+          </div>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label for="appointmentLocation">Location</label>
+              <input type="text" class="form-control mb-3" id="appointmentLocation" [(ngModel)]="selectedEvent.location"
+                name="location">
+            </div>
+          </div>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label for="appointmentNote">Note</label>
+              <input type="text" class="form-control mb-3" id="appointmentNote" [(ngModel)]="selectedEvent.note"
+                name="note" placeholder="Not set" value="{{selectedEvent.note}}">
+            </div>
+          </div>
+          <div *ngIf="selectedEvent.attendees.length > 1">
+            <div class="form-row align-items-center">
+              <div class="col-auto">
+                <label for="appointmentTags">With {{selectedEvent.attendees.length - 1 }} others.</label>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline-dark mr-3" aria-controls="editEventCollapsable"
+            (click)="toggleAppointmentCollapsable()">Cancel</button>
+          <button type="button" class="btn btn-outline-dark mr-3" aria-controls="editEventCollapsable"
+            (click)="updateEvent()">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

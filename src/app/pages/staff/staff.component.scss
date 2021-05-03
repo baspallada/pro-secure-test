@@ -1,0 +1,21 @@
+.title-container {
+  text-align: center;
+}
+
+.title-container h1 {
+  margin-top: 2.5em;
+  font-family: roboto, sans-serif;
+  font-weight: 600;
+}
+
+.title-container p {
+  font-family: roboto, sans-serif;
+  font-size: 1.1em;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 3em;
+}

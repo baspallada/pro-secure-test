@@ -1,0 +1,37 @@
+{
+  "features": {
+    "overview": [
+      {
+        "title": "Personal Assistant",
+        "description": [
+          "Ever wanted to have your own personal assistant?",
+          "One that you can rely on for appointments, reminders, music,",
+          "the weather and much more? Look no further!"
+        ],
+        "iconSrc": "assets/icons/person-icon.png",
+        "imageLink": "assets/features/assistant.png",
+        "type": "Overview"
+      },
+      {
+        "title": "Server Management",
+        "description": [
+          "Don’t want to make a mess out of your server?",
+          "No worries, Clerq will help you manage it."
+        ],
+        "iconSrc": "assets/icons/settings-icon.png",
+        "imageLink": "assets/features/management.png",
+        "type": "Overview"
+      },
+      {
+        "title": "Game Hub",
+        "description": [
+          "Did you have times where you felt bored and had nothing to do?",
+          "Well, Clerq has some games for you ready to play."
+        ],
+        "iconSrc": "assets/icons/gamepad-icon.png",
+        "imageLink": "assets/features/hangman.png",
+        "type": "Overview"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+<div class="card">
+  <img class="card-avatar" src={{staffMember.image}} alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-name">{{staffMember.name}}</h3>
+    <div *ngIf="staffMember.discriminator; else no_discriminator">
+      <h5 class="card-usertag">{{staffMember.discriminator}}</h5>
+    </div>
+    <p class="card-description">{{description}}
+    </p>
+    <div class="socials-container">
+      <a *ngIf="staffMember.github" href="{{staffMember.github}}" class="icon-wrapper" target="_blank"><img
+          src="assets/icons/github-icon.png" class="social-icon" /></a>
+      <a *ngIf="staffMember.twitter" href="{{staffMember.twitter}}" class="icon-wrapper" target="_blank"><img
+          src="assets/icons/twitter-icon.png" class="social-icon" /></a>
+      <a *ngIf="staffMember.twitch" href="{{staffMember.twitch}}" class="icon-wrapper" target="_blank"><img
+          src="assets/icons/twitch-icon.png" class="social-icon" /></a>
+    </div>
+  </div>
+</div>
+
+<ng-template #no_discriminator><br></ng-template>

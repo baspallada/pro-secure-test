@@ -1,0 +1,63 @@
+.card {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 3px;
+    background: #18171C;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.40);
+    text-align: center;
+  }
+
+  .card-body {
+    padding: 0;
+  }
+
+  .card-subtitle {
+    font-size: 20px;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .card-img-top:hover {
+    opacity: .8;
+    filter: alpha(opacity=100);
+}
+
+.server-selection-card {
+  width: 10rem;
+  height: 10rem;
+
+  color: #18171C;
+  font-family: poppins;
+  font-weight: 600;
+
+  text-shadow: 1px lightsteelblue;
+}
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .container {
+      text-align: center;
+    }
+  }
+  
+  /* 
+    Device = Tablets, iPads (portrait)
+    Screen = B/w 768px to 1024px
+  */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+      text-align: center;
+    }
+  }
+  
+  /* 
+    Device = Tablets, iPads (portrait)
+    Screen = B/w 320px to 480px
+  */
+  @media (min-width: 320px) and (max-width: 480px) {
+    .container {
+      text-align: center;
+    }
+  }

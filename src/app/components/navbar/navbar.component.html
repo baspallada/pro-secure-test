@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+  <a class="navbar-brand" routerLink="">
+    <img class="logo" src="assets/images/LogoNoBG.png" alt="Clerq logo">
+  </a>
+  <app-server-dropdown *ngIf="router.url == '/dashboard'"></app-server-dropdown>
+
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed">
+    <ul class="mr-auto mt-2 mt-lg-0">
+    </ul>
+    <div class="navbar-nav" *ngIf="user; then logout else login"></div>
+  </div>
+
+  <ng-template #login>
+    <a class="nav-link" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact:
+      true}" routerLink="/" (click)="isMenuCollapsed = true">Home</a>
+    <a class="nav-link" routerLinkActive="nav-active" routerLink="/commands"
+      (click)="isMenuCollapsed = true">Commands</a>
+    <a class="nav-link" routerLinkActive="nav-active" routerLink="/staff" (click)="isMenuCollapsed = true">Staff</a>
+    <a class="nav-link" routerLinkActive="nav-active" (click)="logIn();" (click)=" isMenuCollapsed=true">Dashboard</a>
+    <a class="nav-link my-2 my-lg-0 login" (click)="logIn(); isMenuCollapsed = true">Log In</a>
+  </ng-template>
+  <ng-template #logout>
+    <a class="nav-link" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact:
+      true}" routerLink="/" (click)="isMenuCollapsed = true">Home</a>
+    <a class="nav-link" routerLinkActive="nav-active" routerLink="/commands"
+      (click)="isMenuCollapsed = true">Commands</a>
+    <a class="nav-link" routerLinkActive="nav-active" routerLink="/staff" (click)="isMenuCollapsed = true">Staff</a>
+    <a class="nav-link" routerLinkActive="nav-active" routerLink="/dashboard"
+      (click)="isMenuCollapsed = true">Dashboard</a>
+    <a class="nav-link my-2 my-lg-0 login" routerLink="/" (click)="logOut(); isMenuCollapsed = true">Log Out</a>
+  </ng-template>
+</nav>
